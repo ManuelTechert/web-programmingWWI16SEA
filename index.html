@@ -2,10 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="flexgrid.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+
   <title>[Startseite] - Luigis Pizzeria</title>
-  <img src="img/logo.png">
 </head>
-<body>
+ <body> <div class = "container", "grid-960">
   <!--#include file="partials/_nav.html" -->
 
   <!--
@@ -22,7 +25,12 @@
     <ol>
     <h1>Pizza Kaviar</h1>
     <img src="img/pz_caviar.jpg">
-    <p>Eine Pizza mit Kaviar.</p>
+    <p>Beläge : Kaviar </p>
+    <p> Stück (5,50€) </p>
+    <input id = "input1" type "text" value = "0">
+    <input type = "button" value = "+">
+    <input type = "button" value = "-">
+
   </ol>
   </div>
 
@@ -30,7 +38,11 @@
   <ol>
     <h1>Pizza vier Jahreszeiten</h1>
     <img src="img/pz_four-seasons.jpg">
-    <p> Eine Pizza mit vier verschiedenen Belägen </p>
+    <p> Beläge: Artischocken, Käse, Schinken </p>
+    <p> Stück (6,50€) </p>
+    <input id = "input1" type "text" value = "0">
+    <input type = "button" value = "+">
+    <input type = "button" value = "-">
 </ol>
   </div>
 
@@ -38,7 +50,11 @@
     <ol>
     <h1>Pizza Schinken</h1>
     <img src="img/pz_ham.jpg">
-    <p>Eine Pizza mit Schinken.</p>
+    <p> Beläge: Schinken, Schinken und Schinken.</p>
+    <p> Stück (5,50€) </p>
+    <input id = "input1" type "text" value = "0">
+    <input type = "button" value = "+">
+    <input type = "button" value = "-">
 </ol>
   </div>
 
@@ -46,7 +62,11 @@
     <ol>
     <h1>Pizza mit scharfen Pepperoni</h1>
     <img src="img/pz_hot-pepper.jpg">
-    <p> Eine Pizza mit scharfen Pepperoni </p>
+    <p> Beläge: Pepperoni, scharfe Pepperoni. </p>
+    <p> Stück (6,50€) </p>
+    <input id = "input1" type "text" value = "0">
+    <input type = "button" value = "+">
+    <input type = "button" value = "-">
 </ol>
   </div>
 
@@ -54,7 +74,11 @@
     <ol>
     <h1>Pizza Rucola</h1>
     <img src="img/pz_roquette.jpg">
-    <p> Eine Pizza mit Rucola </p>
+    <p> Beläge: Rucola </p>
+    <p> Stück (6,50€) </p>
+    <input id = "input1" type "text" value = "0">
+    <input type = "button" value = "+">
+    <input type = "button" value = "-">
   </ol>
   </div>
 
@@ -62,10 +86,66 @@
   <ol>
     <h1>Pizzabrot</h1>
     <img src="img/pz_bread.jpg">
-    <p> Ein Brot aus Pizza </p>
+    <p> Beläge: Brot </p>
+    <p> Stück (4,50€) </p>
+    <input id = "input1" type "text" value = "0">
+    <input type = "button" value = "+">
+    <input type = "button" value = "-">
   </ol>
   </div>
 
+  <div>
+
+    <h1>Warenkorb</h1>
+
+    <table>
+      <tr>
+
+        <td> <img src="img/pz_caviar.jpg"></td>
+        <td> Pizza Kaviar </td>
+        <td> 2x </td>
+        <td> Preis 2 * 5,50€ </td>
+      </tr>
+
+      <tr>
+        <td> <img src="img/pz_bread.jpg"></td>
+        <td> Pizzabrot </td>
+        <td> 1x </td>
+        <td> Preis 3 * 4,50€ </td>
+
+      </tr>
+
+      <tr>
+        <td colspan = "3"> Gesamtpreis</td>
+        <td> Gesamtsumme:  </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <div>
+    <h1> Adressformular </h1>
+
+    <p1> Name: </p1> <input type = "text" name = "Name" placeholder="Max, Mustermann">
+    <p2> Straße, Hausnummer </p1> <input type = "text" name= "Straße, Hausnummer" placeholder="Holzweg, 2">
+    <p3> PLZ: </p1> <input type = "text" name = "PLZ" placeholder="68259">
+    <p4> Ort: </p1> <input type = "text" name = "Ort" placeholder="Mannheim">
+    <p5> Anmerkungen: </p1> <input type = "text" name= "Anmerkungen" placeholder="Ohne schaf und swibel">
+     <input type = "checkbox" value="Bestellbestätigung per E-Mail senden">
+     <input type = "button" value = "Abschicken">
+    <input type = "button" value = "Zurücksetzen">
+
+
+
+
+
+
+
+
+  </div>
+
   <!--#include file="partials/_footer.html" -->
+</div>
 </body>
 </html>
