@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gästebuch - Luigis Pizzeria</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/flexgrid.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div class="container grid-960">
+    <!--#include file="partials/_nav.html" -->
+
+    <form>
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Name" />
+
+      <br>
+
+      <label for="email">E-Mail</label>
+      <input id="email" type="text" placeholder="max@mustermann.de" />
+
+      <br>
+
+      <label for="date">Datum des Besuchs</label>
+      <input id="date" type="text" placeholder="02.12.2016" />
+
+      <br>
+
+      <label for="rating">Bewertung</label>
+      <select id="rating">
+        <option>Bitte auswählen</option>
+        <option>1 - Sehr gut</option>
+        <option>2 - Gut</option>
+        <option>3 - Befriedigend</option>
+        <option>4 - Ausreichend</option>
+        <option>5 - Mangelhaft</option>
+      </select>
+
+      <br>
+
+      <label>Nachricht</label>
+      <textarea placeholder="Tolles Ambiente, Nette Bedienung, Leckeres Essen, ..." rows="3"></textarea>
+
+      <br>
+
+      <button type="submit">Feedback Abschicken</button>
+      <button type="reset">Zurücksetzen</button>
+    </form>
+
+    <!-- Content -->
+    <table class="table trable-striped">
+      <thead>
+        <tr>
+          <th class="col-3">Name</th>
+          <th class="col-2">Bewertung</th>
+          <th class="col-7">Nachricht</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <span>21.11.2016 11:54</span><br>
+            Hans Mustermann
+          </td>
+          <td>5 - Sehr gut</td>
+          <td>Alles toll! Essen war lecker!</td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>12.11.2016 19:00</span><br>
+            Riccardo De Fuente
+          </td>
+          <td>4 - Gut</td>
+          <td>Fast perfekt. Aber Austern waren aus!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--#include file="partials/_footer.html" -->
+</body>
+</html>
