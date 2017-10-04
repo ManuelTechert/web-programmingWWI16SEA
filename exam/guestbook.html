@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--#include file="partials/_head.html" -->
+  <title>Gästebuch - Luigis Pizzeria</title>
+</head>
+<body>
+  <!--#include file="partials/_nav.html" -->
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Name</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <input class="form-input" type="text" placeholder="Name" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">E-Mail</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <input class="form-input" type="text" placeholder="max@mustermann.de" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Datum des Besuchs</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <input class="form-input" type="text" placeholder="25.11.2016" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Bewertung</label>
+      </div>
+
+      <div class="col-sm-8 col-9">
+        <select class="form-select">
+            <option>Bitte auswählen</option>
+            <option>1 - Sehr gut</option>
+            <option>2 - Gut</option>
+            <option>3 - Befriedigend</option>
+            <option>4 - Ausreichend</option>
+            <option>5 - Mangelhaft</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Nachricht</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <textarea class="form-input" placeholder="Tolles Ambiente, Nette Bedienung, Leckeres Essen, ..." rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-lg-3 col-2"></div>
+      <div class="col-sm-8 col-9">
+        <button class="btn btn-primary" type="submit">Feedback Abschicken</button>
+        <button class="btn btn-link" type="reset">Zurücksetzen</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="divider"></div>
+
+  <!-- Content -->
+  <table class="table trable-striped">
+    <thead>
+      <tr>
+        <th class="col-3">Name</th>
+        <th class="col-2">Bewertung</th>
+        <th class="col-7">Nachricht</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          <div class="chip">
+            <div class="chip-icon">
+              <figure class="avatar avatar-lg" data-initial="HM" style="background-color: #5764c6;"></figure><br>
+            </div>
+            <div class="chip-content">
+              <span style="color: #b3b3b3">21.11.2016 11:54</span><br>
+              Hans Mustermann
+            </div>
+          </div>
+        </td>
+        <td>5 - Sehr gut</td>
+        <td>Alles toll! Essen war lecker!</td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="chip">
+            <div class="chip-icon">
+              <figure class="avatar avatar-lg" data-initial="RDF" style="background-color: #5764c6;"></figure><br>
+            </div>
+            <div class="chip-content">
+              <span style="color: #b3b3b3">12.11.2016 19:00</span><br>
+              Riccardo De Fuente
+            </div>
+          </div>
+        </td>
+        <td>4 - Gut</td>
+        <td>Fast perfekt. Aber Austern waren aus!</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--#include file="partials/_footer.html" -->
+</body>
+</html>

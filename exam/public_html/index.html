@@ -1,0 +1,105 @@
+<div class="container grid-960">
+  <div class="columns">
+    <!-- Content -->
+    <div class="column col-lg-12 col-8">
+      <div class="columns" data-bind="foreach: pizza">
+        <div class="column col-sm-12 col-md-6 col-lg-3 col-4">
+          <div class="card" style="width: 200px">
+            <div class="card-header">
+              <h4 class="card-title" data-bind="text: name"></h4>
+              <h6 class="card-meta" data-bind="text: meta"></h6>
+            </div>
+            <div class="card-image">
+              <img data-bind="attr: { src: imageSrc }" class="img-responsive" />
+            </div>
+            <div class="card-body" data-bind="text: getToppings()"></div>
+            <div class="card-footer">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <div class="col-9"><label class="form-label">Stück (x <span data-bind="text: asFormattedPrice()"></span>)</label></div>
+                  <div class="col-3"><input class="form-input" type="text" data-bind="value: count" /></div>
+                </div>
+              </form>
+
+              <div class="btn-group btn-group-block">
+                <button class="btn" data-bind="click: add, enable: count() < 10">+</button>
+                <button class="btn" data-bind="click: remove, enable: count() > 0">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="column col-lg-12 col-4">
+      <div class="empty" data-bind="visible: cart.items().length == 0">
+        <p class="empty-title">Warenkorb ist leer</p>
+        <p class="empty-meta">Mindestbestellwert: 15€</p>
+      </div>
+
+      <div data-bind="visible: cart.items().length > 0">
+        <h3>Bestellung</h3>
+
+        <table class="table mb-10">
+          <tbody data-bind="foreach: cart.items">
+            <tr>
+              <td><img class="avatar" data-bind="attr: { src: imageSrc }" /></td>
+              <td data-bind="text: name"></td>
+              <td data-bind="text: count"></td>
+              <td data-bind="text: asFormattedSum()"></td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr class="text-bold">
+              <td colspan="3">Gesamtpreis</td>
+              <td data-bind="text: cart.asTotalFormatted()"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input class="form-input" type="text" placeholder="Name" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Straße</label>
+          <input class="form-input" type="text" placeholder="Musterstr. 8" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">PLZ</label>
+          <input class="form-input" type="text" placeholder="12345" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Ort</label>
+          <input class="form-input" type="text" placeholder="Musterhausen" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-example-3">Anmerkungen</label>
+          <textarea class="form-input" id="input-example-3" placeholder="Bitte bei 'Mustermann' klingeln" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-switch">
+          <input type="checkbox" />
+          <i class="form-icon"></i> Bestellbestätigung per Mail senden
+          </label>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Bestellung abschicken</button>
+          <button class="btn btn-link" type="reset">Zurücksetzen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/order.js"></script>

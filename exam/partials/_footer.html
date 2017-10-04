@@ -1,0 +1,33 @@
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-right" style="border-top: 3px solid #d8d8d8; margin-top: 1rem; padding: 1rem 1rem 5rem 0; background-color: #f8f8f8">
+    <p style="color:#888">Copyright (&copy;) 2016 - Ristorante Pizzeria</p>
+  </footer>
+
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
+  <script type="text/javascript">
+    // Native JS Variante
+    /*var nav = document.getElementsByTagName('nav')[0],
+        menu = nav.getElementsByTagName('ul')[0],
+        litems = menu.getElementsByTagName('li');
+
+    for (var i = 0; i < litems.length; i++) {
+      var li = litems[i];
+      var href = li.getElementsByTagName('a')[0].getAttribute('href');
+      if (href === document.location.pathname) {
+        li.classList.add('active');
+        break;
+      }
+    }*/
+
+    // jQuery Variant
+    $('nav li a').each(function () {
+      var anchor = $(this); // Wrap Element with jQuery
+      // if (anchor.prop('href') === document.location.href) { // Alternative
+      if (anchor.attr('href') === document.location.pathname) {
+        anchor.parent().addClass('active');
+      }
+    })
+  </script>

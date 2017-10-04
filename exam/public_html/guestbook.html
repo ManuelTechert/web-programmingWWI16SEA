@@ -1,0 +1,114 @@
+<div class="container grid-960">
+  <form class="form-horizontal" method="post">
+    <div class="form-group {{#if validationErrors.name}}has-danger{{/if}}">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Name</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <input name="name" class="form-input" type="text" placeholder="Name" value="{{values.name}}" />
+        {{#if validationErrors.name}}
+          <p class="form-input-hint">{{validationErrors.name}}</p>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="form-group {{#if validationErrors.email}}has-danger{{/if}}">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">E-Mail</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <input name="email" class="form-input" type="text" placeholder="max@mustermann.de" value="{{values.email}}" />
+        {{#if validationErrors.email}}
+          <p class="form-input-hint">{{validationErrors.email}}</p>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="form-group {{#if validationErrors.date}}has-danger{{/if}}">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Datum des Besuchs</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <input name="date" class="form-input" type="text" placeholder="25.11.2016" value="{{values.date}}" />
+        {{#if validationErrors.date}}
+          <p class="form-input-hint">{{validationErrors.date}}</p>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="form-group {{#if validationErrors.rating}}has-danger{{/if}}">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Bewertung</label>
+      </div>
+
+      <div class="col-sm-8 col-9">
+        <select name="rating" class="form-select">
+          {{#select values.rating}}
+          <option value="0">Bitte auswählen</option>
+          <option value="1">1 - Sehr gut</option>
+          <option value="2">2 - Gut</option>
+          <option value="3">3 - Befriedigend</option>
+          <option value="4">4 - Ausreichend</option>
+          <option value="5">5 - Mangelhaft</option>
+          {{/select}}
+        </select>
+        {{#if validationErrors.rating}}
+          <p class="form-input-hint">{{validationErrors.rating}}</p>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="form-group {{#if validationErrors.message}}has-danger{{/if}}">
+      <div class="col-sm-4 col-lg-3 col-2">
+        <label class="form-label">Nachricht</label>
+      </div>
+      <div class="col-sm-8 col-9">
+        <textarea name="message" class="form-input" placeholder="Tolles Ambiente, Nette Bedienung, Leckeres Essen, ..." rows="3">{{values.message}}</textarea>
+        {{#if validationErrors.message}}
+          <p class="form-input-hint">{{validationErrors.message}}</p>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-lg-3 col-2"></div>
+      <div class="col-sm-8 col-9">
+        <button class="btn btn-primary" type="submit">Feedback Abschicken</button>
+        <button class="btn btn-link" type="reset">Zurücksetzen</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="divider"></div>
+
+  <!-- Content -->
+  <table class="table trable-striped">
+    <thead>
+      <tr>
+        <th class="col-3">Name</th>
+        <th class="col-2">Bewertung</th>
+        <th class="col-7">Nachricht</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each bookentries}}
+        <tr>
+          <td>
+            <div class="chip">
+              <div class="chip-icon">
+                <figure class="avatar avatar-lg" data-initial="{{initials}}" style="background-color: {{backgroundColor}};"></figure><br>
+              </div>
+              <div class="chip-content">
+                <span style="color: #b3b3b3">{{date}}</span><br>
+                {{name}}
+              </div>
+            </div>
+          </td>
+          <td>{{rating}}</td>
+          <td>{{message}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
