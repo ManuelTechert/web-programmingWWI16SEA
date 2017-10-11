@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content ="text/html" charset="utf-8" />
+<title> Meine Website </title>
+
+<style type="text/css">
+
+.red{
+  color:red;
+}
+
+.large{
+  font-size:200%;
+}
+
+#green{
+
+  color:green;
+}
+
+.underlined{
+
+  text-decoration:underline;
+}
+
+#div1{
+  color:blue;
+  background-color:pink;
+  width:200px;
+  position:fixed;
+  /*position:relative;
+  left:200px; /*Abstand nach links.
+  Position absolute ist permanent, andere Elemente ignorieren die Position.
+  Geht immer um obere linke Ecke, außerhalb des Flows.
+  Fixed bleibt gleich, wandert mit Scrollen mit, wird immer an gleicher Position angezeigt.*/
+
+  /*float gibt an in welche Richtung die ELemente fließen,
+  zwei linke float Objekte würden sich der Reihe nach links anordnen (nebeneinander).
+  Um darunter dann z.B. Text anzeigen zu können, muss clear-float benutzt werden!*/
+
+}
+#div2{
+  background-color:#00FF0C;
+  width:400px;
+  height:5000px;
+
+  /*Der z-index gibt an, welches Element im Vordergrund ist, je höher, desto weiter oben*/
+   /*Opacity Wert von 0 bis 1 Transparenz*/
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="div1">
+  <p> Jo hier mal ein bisschen Text, den ich gleich mit CSS verändern werde.
+  Richtig cool, oder? Man kann über Inline CSS in einem HTML Dokument style als Attribut mitgeben.
+  Dadurch kann man dann z.B. über style="color:blue; font-size:200%" Befehle mitgeben, die immer
+  durch ein Semikolon getrennt sind. Das alles geschieht inline, man kann aber auch extra Dateien anlegen. </p>
+  <p class="large"> Internal CSS ist super </p>
+</div>
+
+<div id="div2">
+  <h1 class="red"> So hier nochmal ein kurzer Text, um CSS zu üben </h1>
+  <p id="green"> Dies ist etwas mehr text. <span class=underlined>Und dies ist unterstrichen.
+Innere Tags überschreiben die Äußeren. Internal CSS überschreibt external CSS</span> </p><
+</div>
+
+<p> Etwas mehr Text! </p>
+
+
+
+</body>
+
+</html>

@@ -2,7 +2,8 @@ const Joi = require('joi');
 const _ = require('lodash');
 
 const Guestbook = function () {
-    var entries = [],
+    var lastId = 0,
+        entries = [],
         getInitials = function (name) {
             return name.split(' ').reduce(function (accu, name) {
                 return accu + name.charAt(0);
@@ -28,7 +29,7 @@ const Guestbook = function () {
                 .value(),
             d = new Date(),
             defaults = {
-                initials: getInitials(entry.value.name),
+                initials: getInitials(entry.value.name || ""),
                 backgroundColor: randomColor(),
                 date: ("00" + d.getDate().toString()).slice(-2) + '.'
                     + ("00" + (d.getMonth() + 1).toString()).slice(-2) + '.'
@@ -38,16 +39,23 @@ const Guestbook = function () {
             };
 
         if (_.isEmpty(errors)) {
-            entries.unshift(Object.assign({}, defaults, entry.value));
+            entries.unshift(Object.assign({}, defaults, entry.value, { id: ++lastId }));
         }
 
         return [entry.value, errors];
+    };
+
+    this.loadById = function (id) {
+        return entries.find(function (entry) {
+            return entry.id === id;
+        });
     };
 
     this.loadAll = function () {
         return entries;
     };
 };
+
 
 const guestbook = new Guestbook();
 

@@ -107,6 +107,18 @@ server.register([Inert, Vision]).then(function () {
         }
     });
 
+    server.route({ //Neue route für gästebuch
+        method: 'GET',
+        path: '/api/guestbook/{id?}',
+        handler: function (request, reply) { //callback
+          var id = request.params.id;
+          if(id != null){return reply(Guestbook.loadById(id));}
+          else{
+            return reply(Guestbook.loadAll());
+          }
+        } //Im Browser /api/guestbook => Gibt Einträge zurück
+    });
+
     server.route({
         method: 'GET',
         path:'/{r*}',
